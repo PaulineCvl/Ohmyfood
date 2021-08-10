@@ -1,3 +1,199 @@
+@font-face {
+  font-family: "Shrikhand";
+  src: url("../fonts/Shrikhand-Regular.woff2") format("woff2"), url("../fonts/Shrikhand-Regular.woff") format("woff"), url("../fonts/Shrikhand-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Bold.woff2") format("woff2"), url("../fonts/Roboto-Bold.woff") format("woff"), url("../fonts/Roboto-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Light.woff2") format("woff2"), url("../fonts/Roboto-Light.woff") format("woff"), url("../fonts/Roboto-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+/* VARIABLES */
+/* MIXINS */
+* {
+  box-sizing: border-box;
+}
 
+body {
+  margin: 0;
+}
+
+.header {
+  height: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+.header__image img {
+  height: 30px;
+}
+
+main {
+  margin-top: 5px;
+}
+main h3 {
+  margin: 0;
+  margin-bottom: 60px;
+  text-align: center;
+  font-family: "Roboto";
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.city-search {
+  height: 50px;
+  background-color: #eaeaea;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.city-search input {
+  height: 50%;
+  width: 140px;
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  font-family: "Roboto";
+  font-weight: bold;
+  font-size: 14px;
+}
+.city-search input::placeholder {
+  color: #000;
+}
+
+.restaurant-search {
+  background-color: #F6F6F6;
+  text-align: center;
+  padding: 3%;
+}
+.restaurant-search h1 {
+  margin: 0;
+  font-family: "Roboto";
+  font-weight: bold;
+}
+.restaurant-search p {
+  font-family: "Roboto";
+}
+.restaurant-search__button {
+  padding: 1em;
+  background: linear-gradient(#FF79DA, #9356DC);
+  color: #fff;
+  border-radius: 50px;
+  border-width: 0;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.function {
+  padding: 8%;
+}
+
+.function-container {
+  display: flex;
+  justify-content: space-around;
+  counter-reset: functionlist;
+}
+.function-container__box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: "Roboto";
+  padding: 1.5em 2em;
+  background-color: #F6F6F6;
+  border-radius: 15px;
+  position: relative;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+.function-container__box p {
+  margin: 0;
+  padding-left: 2em;
+  font-weight: bold;
+}
+.function-container__box::before {
+  background-color: #9356DC;
+  font-family: "Roboto";
+  color: #fff;
+  border-radius: 50%;
+  counter-increment: functionlist;
+  content: counter(functionlist);
+  position: absolute;
+  left: -10px;
+  padding: 0.1em 0.4em;
+}
+
+.restaurants {
+  background-color: #F6F6F6;
+  padding: 3%;
+}
+
+.restaurants-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 60%;
+  margin: auto;
+}
+
+.restaurants-box {
+  margin-bottom: 40px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+.restaurants-box a {
+  text-decoration: none;
+}
+.restaurants-box img {
+  border-radius: 15px 15px 0 0;
+}
+.restaurants-box__content {
+  font-family: "Roboto";
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #000;
+}
+.restaurants-box__content h2 {
+  margin: 0;
+  font-size: 20px;
+}
+.restaurants-box__content p {
+  margin: 0;
+  margin-top: 5px;
+}
+.restaurants-box__content .fa-heart {
+  font-size: 22px;
+}
+
+.footer {
+  background-color: #373737;
+  padding: 3%;
+}
+.footer__link {
+  color: #fff;
+  list-style: none;
+  font-family: "Roboto";
+  line-height: 2em;
+}
+.footer__link--logo {
+  font-family: "Shrikhand";
+  font-size: 20px;
+}
+.footer__link i {
+  padding-right: 1.5em;
+  width: 25px;
+}
 
 /*# sourceMappingURL=style.css.map */
