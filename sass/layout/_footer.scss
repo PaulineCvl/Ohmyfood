@@ -1,0 +1,18 @@
+.footer {
+    background-color: darken($background, 75%);
+    padding: 3%;
+}
+
+    .footer__link {
+        color: #fff;
+        list-style: none;
+        line-height: 2em;
+        &--logo {
+            font-family: 'Shrikhand';
+            font-size: 20px;
+        }
+        i {
+            padding-right: 1.5em;
+            width: 25px;
+        }
+}
