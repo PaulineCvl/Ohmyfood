@@ -1,6 +1,6 @@
 .footer {
     background-color: darken($background, 75%);
-    padding: 3%;
+    padding: map-get($padding-layout, small);
 }
 
     .footer__link {

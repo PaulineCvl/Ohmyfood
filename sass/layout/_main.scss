@@ -1,0 +1,16 @@
+main {
+    margin-top: 5px;
+    h3 {
+        margin: 0;
+        margin-bottom: 60px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 20px;
+    }
+    @media #{$breakpoint-small} {
+        h3 {
+            text-align: initial;
+            margin-bottom: 20px;
+        }
+    }
+}

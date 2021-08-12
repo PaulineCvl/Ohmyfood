@@ -1,0 +1,49 @@
+.function {
+    padding: map-get($padding-layout, medium);
+}
+
+.function-container {
+    display: flex;
+    justify-content: space-around;
+    counter-reset: functionlist;
+    @media #{$breakpoint-small} {
+        flex-direction: column;
+    }
+}
+
+.function-container__box {
+        display: flex;
+        align-items: center;
+        padding: 1.5em 2em;
+        background-color: $background;
+        border-radius: 15px;
+        position: relative;
+        @include box-shadow;
+        @media #{$breakpoint-small} {
+            margin-bottom: 20px;
+        }
+        p {
+            margin: 0;
+            font-weight: bold;
+            padding-left: 1em;
+        }
+        &::before {
+            background-color: $color-primary;
+            color: #fff;
+            border-radius: 50%;
+            counter-increment: functionlist;
+            content: counter(functionlist);
+            position: absolute;
+            left: -10px;
+            padding: 0.1em 0.4em;
+        }
+}
+
+.function-container__box i {
+    width: 20px;
+    text-align: center;
+    color: darken($background, 50%);
+    &:hover {
+        color: $color-primary;
+    }
+}

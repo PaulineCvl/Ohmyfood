@@ -1,0 +1,19 @@
+.city-search {
+    height: 50px;
+    background-color: darken($background, 4.8%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    input {
+        height: 50%;
+        width: 140px;
+        background-color: transparent;
+        border: none;
+        text-align: center;
+        font-weight: bold;
+        font-size: 14px;
+    }
+    input::placeholder {
+            color: #000;
+    }
+}

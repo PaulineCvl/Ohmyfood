@@ -1,0 +1,53 @@
+.restaurants {
+    background-color: $background;
+    padding: map-get($padding-layout, small);
+    @media #{$breakpoint-small} {
+        padding: map-get($padding-layout, medium)
+    }
+}
+
+.restaurants-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 60%;
+    margin: auto;
+    @media #{$breakpoint-small} {
+        flex-wrap: nowrap;
+        flex-direction: column;
+        width: auto;
+    }
+}
+
+.restaurants-box {
+    margin-bottom: 40px;
+    background-color: #fff;
+    border-radius: 15px;
+    @include box-shadow;
+    a {
+        text-decoration: none;
+    }
+    img {
+        border-radius: 15px 15px 0 0;
+        width: 100%;
+    }
+}
+
+.restaurants-box__content {
+        padding: 1em;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #000;
+        h2 {
+            margin: 0;
+            font-size: 20px;
+        }
+        p {
+            margin: 0;
+            margin-top: 5px;
+        }
+        .fa-heart {
+            font-size: 22px;
+        }
+}

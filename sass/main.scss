@@ -1,32 +1,7 @@
-@font-face {
-    font-family: 'Shrikhand';
-    src: url('../fonts/Shrikhand-Regular.woff2') format('woff2'),
-        url('../fonts/Shrikhand-Regular.woff') format('woff'),
-        url('../fonts/Shrikhand-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: italic;
-    font-display: swap;
-}
+@import "./base/typography";
 
-@font-face {
-    font-family: 'Roboto';
-    src: url('../fonts/Roboto-Bold.woff2') format('woff2'),
-        url('../fonts/Roboto-Bold.woff') format('woff'),
-        url('../fonts/Roboto-Bold.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Roboto';
-    src: url('../fonts/Roboto-Light.woff2') format('woff2'),
-        url('../fonts/Roboto-Light.woff') format('woff'),
-        url('../fonts/Roboto-Light.ttf') format('truetype');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
-}
+/* MEDIA QUERY */
+@import "./utils/responsive";
 
 /* VARIABLES */
 @import "./utils/variables";
@@ -39,135 +14,15 @@
 
 @import "./layout/header";
 
-main {
-    margin-top: 5px;
-    h3 {
-        margin: 0;
-        margin-bottom: 60px;
-        text-align: center;
-        font-weight: bold;
-        font-size: 20px;
-    }
-}
+@import "./layout/main";
 
-.city-search {
-    height: 50px;
-    background-color: darken($background, 4.8%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    input {
-        height: 50%;
-        width: 140px;
-        background-color: transparent;
-        border: none;
-        text-align: center;
-        font-weight: bold;
-        font-size: 14px;
-    }
-    input::placeholder {
-            color: #000;
-    }
-}
+@import "./layout/city-search";
 
-.restaurant-search {
-    background-color: $background;
-    text-align: center;
-    padding: map-get($padding-layout, general);
-    h1 {
-        margin: 0;
-        font-weight: bold;
-    }
-    &__button {
-        padding: 1em;
-        background: linear-gradient($color-secondary, $color-primary);
-        color: #fff;
-        border-radius: 50px;
-        border-width: 0;
-        @include box-shadow;
-    }
-}
+@import "./layout/restaurant-search";
 
-.function {
-    padding: map-get($padding-layout, function);
-}
+@import "./layout/function";
 
-.function-container {
-    display: flex;
-    justify-content: space-around;
-    counter-reset: functionlist;
-}
-
-.function-container__box {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        padding: 1.5em 2em;
-        background-color: $background;
-        border-radius: 15px;
-        position: relative;
-        @include box-shadow;
-        p {
-            margin: 0;
-            padding-left: 2em;
-            font-weight: bold;
-        }
-        &::before {
-            background-color: $color-primary;
-            color: #fff;
-            border-radius: 50%;
-            counter-increment: functionlist;
-            content: counter(functionlist);
-            position: absolute;
-            left: -10px;
-            padding: 0.1em 0.4em;
-        }
-}
-
-.restaurants {
-    background-color: $background;
-    padding: map-get($padding-layout, general);
-}
-
-.restaurants-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    width: 60%;
-    margin: auto;
-}
-
-.restaurants-box {
-    margin-bottom: 40px;
-    background-color: #fff;
-    border-radius: 15px;
-    @include box-shadow;
-    a {
-        text-decoration: none;
-    }
-    img {
-        border-radius: 15px 15px 0 0;
-    }
-}
-
-.restaurants-box__content {
-        padding: 1em;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        color: #000;
-        h2 {
-            margin: 0;
-            font-size: 20px;
-        }
-        p {
-            margin: 0;
-            margin-top: 5px;
-        }
-        .fa-heart {
-            font-size: 22px;
-        }
-}
+@import "./layout/restaurants";
 
 @import "./layout/footer";
 
