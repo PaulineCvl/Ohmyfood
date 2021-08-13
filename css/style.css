@@ -22,6 +22,35 @@
 /* MEDIA QUERY */
 /* VARIABLES */
 /* MIXINS */
+/* BOUCLES */
+.background-alafrancaise {
+  background-image: url(../images/restaurants/pages/alafrancaise.jpg);
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+}
+
+.background-lapalettedugout {
+  background-image: url(../images/restaurants/pages/lapalettedugout.jpg);
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+}
+
+.background-lanoteenchantee {
+  background-image: url(../images/restaurants/pages/lanoteenchantee.jpg);
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+}
+
+.background-ledelicedusens {
+  background-image: url(../images/restaurants/pages/ledelicedusens.jpg);
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+}
+
 /* CSS */
 * {
   box-sizing: border-box;
@@ -30,6 +59,15 @@
 body {
   margin: 0;
   font-family: "Roboto";
+}
+
+button {
+  padding: 1em;
+  background: linear-gradient(#FF79DA, #9356DC);
+  color: #fff;
+  border-radius: 50px;
+  border-width: 0;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .header {
@@ -42,10 +80,13 @@ body {
 .header img {
   height: 30px;
 }
-
-main {
-  margin-top: 5px;
+.header i {
+  position: absolute;
+  left: 30px;
+  top: 25px;
+  color: #000;
 }
+
 main h3 {
   margin: 0;
   margin-bottom: 60px;
@@ -88,14 +129,6 @@ main h3 {
 .restaurant-search h1 {
   margin: 0;
   font-weight: bold;
-}
-.restaurant-search__button {
-  padding: 1em;
-  background: linear-gradient(#FF79DA, #9356DC);
-  color: #fff;
-  border-radius: 50px;
-  border-width: 0;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
 }
 @media only screen and (max-width: 500px) {
   .restaurant-search {
@@ -232,6 +265,87 @@ main h3 {
 .footer__link i {
   padding-right: 1.5em;
   width: 25px;
+}
+
+/* PAGES */
+.content {
+  background-color: #F6F6F6;
+  padding: 3%;
+}
+.content h1 {
+  margin: 0;
+  font-family: Shrikhand;
+  font-weight: normal;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  min-width: 350px;
+  margin: auto;
+}
+.menu h3 {
+  text-align: start;
+  margin-bottom: 0;
+  margin-top: 30px;
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+.menu__title {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+.dishes__title--line {
+  height: 3px;
+  width: 40px;
+  margin-top: 10px;
+  background-color: #99E2D0;
+}
+
+.dishes__menu {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+}
+
+.dishes-box {
+  background-color: #FFF;
+  border-radius: 20px;
+  padding: 1em;
+  margin-bottom: 15px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+.dishes-box__name {
+  font-weight: bold;
+}
+.dishes-box p {
+  margin: 0;
+}
+
+.dishes-box__description {
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+  color: #373737;
+}
+.dishes-box__description p {
+  padding-top: 0.5em;
+  font-size: 14px;
+}
+.dishes-box__description--price {
+  font-weight: bold;
+}
+
+.order {
+  width: 50%;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 85px;
 }
 
 /*# sourceMappingURL=style.css.map */

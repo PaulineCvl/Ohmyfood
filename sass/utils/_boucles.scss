@@ -1,0 +1,8 @@
+@each $restaurant in $restaurants {
+    .background-#{$restaurant} {
+        background-image: url(../images/restaurants/pages/#{$restaurant}.jpg);
+        height: 300px;
+        background-size: cover;
+        background-position: center;
+    }
+}

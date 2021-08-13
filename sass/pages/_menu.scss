@@ -1,0 +1,79 @@
+.content {
+    background-color: $background;
+    padding: map-get($padding-layout, small);
+    h1 {
+        margin: 0;
+        font-family: Shrikhand;
+        font-weight: normal;
+    }
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    min-width: 350px;
+    margin: auto;
+    h3 {
+        text-align: start;
+        margin-bottom: 0;
+        margin-top: 30px;
+        font-weight: normal;
+        text-transform: uppercase;
+        font-size: 16px;
+    }
+    &__title {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-bottom: 30px;
+    }   
+}
+
+.dishes__title--line {
+    height: 3px;
+    width: 40px;
+    margin-top: 10px;
+    background-color: $color-tertiary;
+}
+
+.dishes__menu {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+}
+
+.dishes-box {
+    background-color: #FFF;
+    border-radius: 20px;
+    padding: 1em;
+    margin-bottom: 15px;
+    @include box-shadow;
+    &__name {
+        font-weight: bold;
+    }
+    p {
+        margin: 0;
+    }
+}
+
+.dishes-box__description {
+        display: flex;
+        justify-content: space-between;
+        width: 95%;
+        color: darken($background, 75%);
+        p {
+            padding-top: 0.5em;
+            font-size: 14px;
+        }
+        &--price {
+            font-weight: bold;
+        }
+}
+
+.order {
+    width: 50%;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 85px;
+}

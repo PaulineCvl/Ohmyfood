@@ -6,14 +6,6 @@
         margin: 0;
         font-weight: bold;
     }
-    &__button {
-        padding: 1em;
-        background: linear-gradient($color-secondary, $color-primary);
-        color: #fff;
-        border-radius: 50px;
-        border-width: 0;
-        @include box-shadow;
-    }
     @media #{$breakpoint-small} {
         padding: map-get($padding-layout, large)
     }

@@ -9,8 +9,13 @@
 /* MIXINS */
 @import "./utils/mixins";
 
+/* BOUCLES */
+@import "./utils/boucles";
+
 /* CSS */
 @import "./base/base";
+
+@import "./components/buttons";
 
 @import "./layout/header";
 
@@ -26,4 +31,5 @@
 
 @import "./layout/footer";
 
-
+/* PAGES */
+@import "./pages/menu";
