@@ -12,10 +12,19 @@
 /* BOUCLES */
 @import "./utils/boucles";
 
+/* KEYFRAMES */
+@import "./utils/keyframes";
+
 /* CSS */
 @import "./base/base";
 
 @import "./components/buttons";
+
+@import "./components/likes";
+
+@import "./components/checkbox";
+
+@import "./components/spin";
 
 @import "./layout/header";
 

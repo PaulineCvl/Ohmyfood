@@ -1,0 +1,8 @@
+.dishes-box {
+    &:hover .dishes-box__check .fa-check-circle {
+    animation: check 1s both;
+    }
+    &:hover .dishes-box__check {
+        animation: checkbox 1s both;
+    }
+}

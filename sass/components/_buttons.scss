@@ -4,5 +4,28 @@ button {
     color: #fff;
     border-radius: 50px;
     border-width: 0;
+    position: relative;
+    z-index: 1;
     @include box-shadow;
+
+    &:hover {
+        &::after {
+            opacity: 1;
+        }
+    }
+
+    &::after {
+        content: "";
+        border-radius: 50px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        background: linear-gradient(lighten($color-secondary, 5%), lighten($color-primary, 5%));
+        opacity: 0;
+        transition: opacity 300ms;
+        @include box-shadow($shadow-darkness: rgba(0, 0, 0, 0.4))
+    }
 }

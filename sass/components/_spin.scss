@@ -1,0 +1,52 @@
+.spinner {
+    position: absolute;
+    top: 350px;
+    &__circle {
+        height: 15px;
+        width: 15px;
+        background-color: $color-primary;
+        border-radius: 50%;
+        position: absolute;
+        opacity: 0.1;
+        &--1 {
+            top: 35px;
+            left: 510px;
+            animation: spinner-load $spinner-duration $spinner-delay both;
+        }
+        &--2 {
+            top: 45px;
+            left: 535px;
+            animation: spinner-load $spinner-duration $spinner-delay*2 both;
+        }
+        &--3 {
+            top: 70px;
+            left: 545px;
+            animation: spinner-load $spinner-duration $spinner-delay*3 both;
+        }
+        &--4 {
+            top: 95px;
+            left: 535px;
+            animation: spinner-load $spinner-duration $spinner-delay*4 both;
+        }
+        &--5 {
+            top: 105px;
+            left: 510px;
+            animation: spinner-load $spinner-duration $spinner-delay*5 both;
+        }
+        &--6 {
+            top: 95px;
+            left: 485px;
+            animation: spinner-load $spinner-duration $spinner-delay*6 both;
+        }
+        &--7 {
+            top: 70px;
+            left: 475px;
+            animation: spinner-load $spinner-duration $spinner-delay*7 both;
+        }
+        &--8 {
+            top: 45px;
+            left: 485px;
+            animation: spinner-load $spinner-duration $spinner-delay*8 both;
+        }
+    }
+}
