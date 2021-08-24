@@ -4,5 +4,8 @@
         height: 300px;
         background-size: cover;
         background-position: center;
+        @media #{$breakpoint-xxsmall} {
+            height: 200px;
+        }
     }
 }

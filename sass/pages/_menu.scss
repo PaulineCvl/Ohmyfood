@@ -14,9 +14,6 @@
             font-size: 20px;
         }
     }
-    @media #{$breakpoint-xxsmall} {
-        margin-top: -90px;
-    }
     @media #{$breakpoint-small}, #{$breakpoint-medium}, #{$breakpoint-large} {
         border-radius: 50px 50px 0 0;
     }
@@ -138,6 +135,9 @@
     padding: 0.8em;
     color: white;
     font-size: 30px;
+    @media #{$breakpoint-xxsmall} {
+        padding: 0.8em 0.5em;
+    }
 }
 
 .dishes-box__description {
@@ -147,7 +147,6 @@
         color: darken($background, 75%);
         p {
             padding-top: 0.5em;
-            padding-left: 0.5em;
             font-size: 14px;
         }
         &--price {
