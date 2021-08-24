@@ -106,6 +106,7 @@
     border-radius: 20px;
     margin-bottom: 15px;
     position: relative;
+    overflow: hidden;
     @include box-shadow;
     p {
         margin: 0;

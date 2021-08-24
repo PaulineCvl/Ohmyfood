@@ -2,13 +2,19 @@
     &__check {
         animation: checkbox-out 500ms both;
     }
+    &__content {
+        animation: dishes-out 500ms both;
+    }
+    .fa-check-circle {
+        animation: check-out 500ms both;
+    }
     &:hover .dishes-box__content {
-        animation: dishes 1s both;
+        animation: dishes 800ms both;
     }
     &:hover .dishes-box__check .fa-check-circle {
-        animation: check 450ms 275ms both;
+        animation: check 450ms 200ms both;
     }
     &:hover .dishes-box__check {
-        animation: checkbox 1s both;
+        animation: checkbox 800ms both;
     }
 }

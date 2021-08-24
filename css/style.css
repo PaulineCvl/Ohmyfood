@@ -81,16 +81,28 @@
     width: 70%;
   }
 }
+@keyframes dishes-out {
+  from {
+    width: 70%;
+  }
+  to {
+    width: 100%;
+  }
+}
 @keyframes check {
   0% {
     transform: translateX(50px);
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
   }
   100% {
-    transform: translateX(0) rotate(-360deg);
+    transform: translateX(0) rotate(360deg);
+  }
+}
+@keyframes check-out {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100px);
   }
 }
 @keyframes checkbox {
@@ -209,14 +221,20 @@ i.fas.fa-heart {
 .dishes-box__check {
   animation: checkbox-out 500ms both;
 }
+.dishes-box__content {
+  animation: dishes-out 500ms both;
+}
+.dishes-box .fa-check-circle {
+  animation: check-out 500ms both;
+}
 .dishes-box:hover .dishes-box__content {
-  animation: dishes 1s both;
+  animation: dishes 800ms both;
 }
 .dishes-box:hover .dishes-box__check .fa-check-circle {
-  animation: check 450ms 275ms both;
+  animation: check 450ms 200ms both;
 }
 .dishes-box:hover .dishes-box__check {
-  animation: checkbox 1s both;
+  animation: checkbox 800ms both;
 }
 
 .spinner {
@@ -808,6 +826,7 @@ main h3 {
   border-radius: 20px;
   margin-bottom: 15px;
   position: relative;
+  overflow: hidden;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
 }
 .dishes-box p {

@@ -33,19 +33,32 @@
     }
 }
 
+@keyframes dishes-out {
+    from {
+        width: 70%;
+    }
+    to {
+        width: 100%;
+    }
+}
+
 @keyframes check {
     0% {
         transform: translateX(50px);
-        opacity: 0;
-    }
-
-    50% {
-        opacity: 1;
     }
 
     100% {
-        transform: translateX(0) rotate(-360deg);
+        transform: translateX(0) rotate(360deg);
     } 
+}
+
+@keyframes check-out {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100px);
+    }
 }
 
 @keyframes checkbox {
