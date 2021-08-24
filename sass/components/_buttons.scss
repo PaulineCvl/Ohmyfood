@@ -7,6 +7,10 @@ button {
     position: relative;
     z-index: 1;
     @include box-shadow;
+    @media #{$breakpoint-xxsmall} {
+        padding: 0.8em;
+        font-size: 11px;
+    }
 
     &:hover {
         &::after {

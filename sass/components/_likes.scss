@@ -6,14 +6,21 @@ i.far.fa-heart {
     &:hover + i.fas.fa-heart {
         animation: like-btn 500ms forwards;
     }
+    &:active + i.fas.fa-heart {
+        animation: like-btn 500ms forwards;
+    }
 }
 
 i.far.fa-heart {
     position: absolute;
+    top: 25%;
+    left: 25%;
 }
 
 i.fas.fa-heart {
     color: $color-primary;
-    position: relative;
+    position: absolute;
+    top: 25%;
+    left: 25%;
     transform: scale(0);
 }

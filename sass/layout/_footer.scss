@@ -1,18 +1,41 @@
 .footer {
     background-color: darken($background, 75%);
     padding: map-get($padding-layout, small);
+    ul {
+        @media #{$breakpoint-xxsmall} {
+            padding: 8%;
+            font-size: 11px;
+        }
+        @media #{$breakpoint-xsmall} {
+            padding: 8%;
+        }
+    }
 }
 
     .footer__link {
         color: #fff;
         list-style: none;
         line-height: 2em;
+        @media #{$breakpoint-xxsmall} {
+            line-height: 1.5em;
+        }
         &--logo {
             font-family: 'Shrikhand';
             font-size: 20px;
+            @media #{$breakpoint-xxsmall} {
+                font-size: 14px;
+            }
         }
         i {
             padding-right: 1.5em;
             width: 25px;
+            @media #{$breakpoint-xxsmall} {
+                padding-right: 1em;
+                width: 20px;
+            }
+        }
+        a {
+            text-decoration: none;
+            color: #fff;
         }
 }

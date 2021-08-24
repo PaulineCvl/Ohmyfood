@@ -6,11 +6,21 @@
     @include box-shadow;
     img {
         height: 30px;
+        @media #{$breakpoint-xxsmall}, #{$breakpoint-xsmall} {
+            height: 15px;
+        }
     }
     i {
         position: absolute;
         left: 30px;
         top: 25px;
         color: #000;
+        @media #{$breakpoint-xxsmall} {
+            top: 45px;
+            left: 50%;
+        }
+        @media #{$breakpoint-xxsmall}, #{$breakpoint-xsmall} {
+            font-size: 11px;
+        }
     }
 }

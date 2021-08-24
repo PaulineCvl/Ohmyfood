@@ -6,9 +6,22 @@
         margin: 0;
         font-family: Shrikhand;
         font-weight: normal;
+        @media #{$breakpoint-xxsmall} {
+            font-size: 16px;
+            @include overflow;
+        }
+        @media #{$breakpoint-xsmall} {
+            font-size: 20px;
+        }
     }
-    @media #{$breakpoint-small} {
+    @media #{$breakpoint-xxsmall} {
+        margin-top: -90px;
+    }
+    @media #{$breakpoint-small}, #{$breakpoint-medium}, #{$breakpoint-large} {
         border-radius: 50px 50px 0 0;
+    }
+    @media #{$breakpoint-xxsmall}, #{$breakpoint-xsmall} {
+        border-radius: 30px 30px 0 0;
     }
 }
 
@@ -25,18 +38,39 @@
         font-weight: normal;
         text-transform: uppercase;
         font-size: 16px;
-    }
-    &__title {
+        @media #{$breakpoint-xxsmall} {
+            font-size: 14px;
+        }
+    } 
+    @media #{$breakpoint-small} {
+        width: auto;
+        min-width: auto;
+    } 
+}
+
+.menu__title {
         display: flex;
         align-items: center;
         justify-content: space-around;
         margin-top: 20px;
         margin-bottom: 20px;
-    }  
-    @media #{$breakpoint-small} {
-        width: auto;
-        min-width: auto;
-    } 
+        @media #{$breakpoint-xsmall} {
+            margin-top: 25px;
+        }
+        &--icon {
+            position: relative;
+            height: 50px;
+            width: 50px;
+            @media #{$breakpoint-xxsmall}, #{$breakpoint-xsmall} {
+                height: 30px;
+                width: 30px;
+            }
+        }
+        i {
+            @media #{$breakpoint-xxsmall}, #{$breakpoint-xsmall} {
+                font-size: 16px;
+            }
+        }
 }
 
 .dishes__title--line {
@@ -66,19 +100,18 @@
 }
 
 .dishes-box {
-    display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: #FFF;
     border-radius: 20px;
     margin-bottom: 15px;
+    position: relative;
     @include box-shadow;
     p {
         margin: 0;
     }
     &__content {
         padding: 1em;
-        width: 70%;
     }
     &__name {
         p {
@@ -89,6 +122,9 @@
         }
     }
     &__check {
+        position: absolute;
+        top: 0;
+        right: 0;
         transform: scaleX(0);
         text-align: center;
         background-color: $color-tertiary;
@@ -98,7 +134,7 @@
 
 .fa-check-circle {
     transform: scaleX(1);
-    padding: 1em;
+    padding: 0.8em;
     color: white;
     font-size: 30px;
 }
@@ -110,15 +146,14 @@
         color: darken($background, 75%);
         p {
             padding-top: 0.5em;
+            padding-left: 0.5em;
             font-size: 14px;
         }
         &--price {
             font-weight: bold;
         }
         p:first-child {
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+            @include overflow;
         }
 }
 
@@ -127,4 +162,10 @@
     margin: auto;
     margin-top: 50px;
     margin-bottom: 85px;
+    @media #{$breakpoint-xxsmall}, #{$breakpoint-xsmall} {
+        width: 70%;
+        padding: 1em;
+        font-size: 12px;
+        @include overflow;
+    }
 }

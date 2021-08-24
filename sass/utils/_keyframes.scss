@@ -24,6 +24,15 @@
     }
 }
 
+@keyframes dishes {
+    from {
+        width: 100%;
+    }
+    to {
+        width: 70%;
+    }
+}
+
 @keyframes check {
     0% {
         transform: translateX(50px);
@@ -36,7 +45,7 @@
 
     100% {
         transform: translateX(0) rotate(-360deg);
-    }
+    } 
 }
 
 @keyframes checkbox {
@@ -47,6 +56,17 @@
 
     100% {
         transform: scaleX(1);
+        transform-origin: right;
+    }
+}
+
+@keyframes checkbox-out {
+    0% {
+        transform: scaleX(1);
+        transform-origin: right;
+    }
+    100% {
+        transform: scaleX(0);
         transform-origin: right;
     }
 }

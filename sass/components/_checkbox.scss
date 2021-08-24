@@ -1,6 +1,12 @@
 .dishes-box {
+    &__check {
+        animation: checkbox-out 500ms both;
+    }
+    &:hover .dishes-box__content {
+        animation: dishes 1s both;
+    }
     &:hover .dishes-box__check .fa-check-circle {
-    animation: check 1s both;
+        animation: check 450ms 275ms both;
     }
     &:hover .dishes-box__check {
         animation: checkbox 1s both;

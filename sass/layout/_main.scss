@@ -1,4 +1,4 @@
-main {
+.main {
     animation: main both;
     animation-delay: $spinner-duration*8 + $spinner-delay;
 }
@@ -12,5 +12,8 @@ main h3 {
     @media #{$breakpoint-small} {
         text-align: initial;
         margin-bottom: 20px;
+    }
+    @media #{$breakpoint-xxsmall} {
+        font-size: 14px;
     }
 }

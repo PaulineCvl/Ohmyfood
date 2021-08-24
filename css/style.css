@@ -73,6 +73,14 @@
     opacity: 1;
   }
 }
+@keyframes dishes {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 70%;
+  }
+}
 @keyframes check {
   0% {
     transform: translateX(50px);
@@ -92,6 +100,16 @@
   }
   100% {
     transform: scaleX(1);
+    transform-origin: right;
+  }
+}
+@keyframes checkbox-out {
+  0% {
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+  100% {
+    transform: scaleX(0);
     transform-origin: right;
   }
 }
@@ -139,6 +157,12 @@ button {
   z-index: 1;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
 }
+@media only screen and (max-width: 250px) {
+  button {
+    padding: 0.8em;
+    font-size: 11px;
+  }
+}
 button:hover::after {
   opacity: 1;
 }
@@ -164,75 +188,115 @@ button::after {
 i.far.fa-heart:hover + i.fas.fa-heart {
   animation: like-btn 500ms forwards;
 }
+i.far.fa-heart:active + i.fas.fa-heart {
+  animation: like-btn 500ms forwards;
+}
 
 i.far.fa-heart {
   position: absolute;
+  top: 25%;
+  left: 25%;
 }
 
 i.fas.fa-heart {
   color: #9356DC;
-  position: relative;
+  position: absolute;
+  top: 25%;
+  left: 25%;
   transform: scale(0);
 }
 
+.dishes-box__check {
+  animation: checkbox-out 500ms both;
+}
+.dishes-box:hover .dishes-box__content {
+  animation: dishes 1s both;
+}
 .dishes-box:hover .dishes-box__check .fa-check-circle {
-  animation: check 1s both;
+  animation: check 450ms 275ms both;
 }
 .dishes-box:hover .dishes-box__check {
   animation: checkbox 1s both;
 }
 
 .spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
-  top: 350px;
+  width: 100%;
+  height: 800px;
+}
+@media only screen and (max-width: 250px) {
+  .spinner {
+    height: 650px;
+  }
 }
 .spinner__circle {
-  height: 15px;
-  width: 15px;
+  height: 20px;
+  width: 20px;
   background-color: #9356DC;
   border-radius: 50%;
   position: absolute;
   opacity: 0.1;
 }
+@media only screen and (max-width: 250px) {
+  .spinner__circle {
+    height: 10px;
+    width: 10px;
+  }
+}
 .spinner__circle--1 {
-  top: 35px;
-  left: 510px;
+  top: 0;
+  left: 50%;
   animation: spinner-load 0.1s 0.1s both;
 }
 .spinner__circle--2 {
-  top: 45px;
-  left: 535px;
+  top: 17%;
+  left: 85%;
   animation: spinner-load 0.1s 0.2s both;
 }
 .spinner__circle--3 {
-  top: 70px;
-  left: 545px;
+  top: 50%;
+  left: 100%;
   animation: spinner-load 0.1s 0.3s both;
 }
 .spinner__circle--4 {
-  top: 95px;
-  left: 535px;
+  top: 81%;
+  left: 85%;
   animation: spinner-load 0.1s 0.4s both;
 }
 .spinner__circle--5 {
-  top: 105px;
-  left: 510px;
+  top: 100%;
+  left: 50%;
   animation: spinner-load 0.1s 0.5s both;
 }
 .spinner__circle--6 {
-  top: 95px;
-  left: 485px;
+  top: 81%;
+  left: 15%;
   animation: spinner-load 0.1s 0.6s both;
 }
 .spinner__circle--7 {
-  top: 70px;
-  left: 475px;
+  top: 50%;
+  left: 0;
   animation: spinner-load 0.1s 0.7s both;
 }
 .spinner__circle--8 {
-  top: 45px;
-  left: 485px;
+  top: 17%;
+  left: 15%;
   animation: spinner-load 0.1s 0.8s both;
+}
+
+.spinner-box {
+  position: relative;
+  height: 100px;
+  width: 100px;
+}
+@media only screen and (max-width: 250px) {
+  .spinner-box {
+    height: 50px;
+    width: 50px;
+  }
 }
 
 .header {
@@ -245,14 +309,30 @@ i.fas.fa-heart {
 .header img {
   height: 30px;
 }
+@media only screen and (max-width: 250px), only screen and (min-width: 250px) and (max-width: 350px) {
+  .header img {
+    height: 15px;
+  }
+}
 .header i {
   position: absolute;
   left: 30px;
   top: 25px;
   color: #000;
 }
+@media only screen and (max-width: 250px) {
+  .header i {
+    top: 45px;
+    left: 50%;
+  }
+}
+@media only screen and (max-width: 250px), only screen and (min-width: 250px) and (max-width: 350px) {
+  .header i {
+    font-size: 11px;
+  }
+}
 
-main {
+.main {
   animation: main both;
   animation-delay: 0.9s;
 }
@@ -270,6 +350,11 @@ main h3 {
     margin-bottom: 20px;
   }
 }
+@media only screen and (max-width: 250px) {
+  main h3 {
+    font-size: 14px;
+  }
+}
 
 .city-search {
   height: 50px;
@@ -277,6 +362,12 @@ main h3 {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media only screen and (max-width: 250px) {
+  .city-search i {
+    font-size: 11px;
+    padding: 0.5em;
+  }
 }
 .city-search input {
   height: 50%;
@@ -286,6 +377,16 @@ main h3 {
   text-align: center;
   font-weight: bold;
   font-size: 14px;
+}
+@media only screen and (max-width: 250px) {
+  .city-search input {
+    font-size: 11px;
+    width: 100px;
+    padding: 0.5em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 .city-search input::placeholder {
   color: #000;
@@ -299,6 +400,21 @@ main h3 {
 .restaurant-search h1 {
   margin: 0;
   font-weight: bold;
+}
+@media only screen and (max-width: 250px) {
+  .restaurant-search h1 {
+    font-size: 14px;
+  }
+}
+@media only screen and (min-width: 250px) and (max-width: 350px) {
+  .restaurant-search h1 {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 250px) {
+  .restaurant-search p {
+    font-size: 11px;
+  }
 }
 @media only screen and (max-width: 500px) {
   .restaurant-search {
@@ -316,22 +432,52 @@ main h3 {
   justify-content: space-around;
   counter-reset: functionlist;
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 250px) {
+  .function-container {
+    font-size: 11px;
+  }
+}
+@media only screen and (min-width: 250px) and (max-width: 350px) {
+  .function-container {
+    font-size: 12px;
+    width: 90%;
+    margin: auto;
+  }
+}
+@media only screen and (max-width: 500px), only screen and (min-width: 501px) and (max-width: 700px), only screen and (min-width: 701px) and (max-width: 975px) {
   .function-container {
     flex-direction: column;
+  }
+}
+@media only screen and (min-width: 501px) and (max-width: 700px) {
+  .function-container {
+    width: 70%;
+    margin: auto;
+  }
+}
+@media only screen and (min-width: 701px) and (max-width: 975px) {
+  .function-container {
+    width: 50%;
+    margin: auto;
   }
 }
 
 .function-container__box {
   display: flex;
   align-items: center;
-  padding: 1.5em 2em;
+  padding: 1.5em;
   background-color: #F6F6F6;
   border-radius: 15px;
   position: relative;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 250px) {
+  .function-container__box {
+    padding: 1em 2em;
+    border-radius: 5px;
+  }
+}
+@media only screen and (max-width: 500px), only screen and (min-width: 501px) and (max-width: 700px), only screen and (min-width: 701px) and (max-width: 975px) {
   .function-container__box {
     margin-bottom: 20px;
   }
@@ -340,6 +486,13 @@ main h3 {
   margin: 0;
   font-weight: bold;
   padding-left: 1em;
+}
+@media only screen and (max-width: 250px), only screen and (min-width: 250px) and (max-width: 350px) {
+  .function-container__box p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 .function-container__box::before {
   background-color: #9356DC;
@@ -350,6 +503,11 @@ main h3 {
   position: absolute;
   left: -10px;
   padding: 0.1em 0.4em;
+}
+@media only screen and (max-width: 250px) {
+  .function-container__box::before {
+    left: 0;
+  }
 }
 
 .function-container__box i {
@@ -385,6 +543,12 @@ main h3 {
     width: auto;
   }
 }
+@media only screen and (min-width: 976px) and (max-width: 1290px) {
+  .restaurants-container {
+    flex-direction: column;
+    width: 30%;
+  }
+}
 
 .restaurants-box {
   margin-bottom: 40px;
@@ -405,20 +569,80 @@ main h3 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.restaurants-box__content a {
   color: #000;
+  width: 100%;
+}
+@media only screen and (max-width: 250px), only screen and (min-width: 250px) and (max-width: 350px) {
+  .restaurants-box__content a {
+    width: 75%;
+  }
 }
 .restaurants-box__content h2 {
   margin: 0;
   font-size: 20px;
 }
+@media only screen and (max-width: 250px) {
+  .restaurants-box__content h2 {
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+@media only screen and (min-width: 250px) and (max-width: 350px) {
+  .restaurants-box__content h2 {
+    font-size: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
 .restaurants-box__content p {
   margin: 0;
   margin-top: 5px;
+}
+@media only screen and (max-width: 250px) {
+  .restaurants-box__content p {
+    font-size: 11px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.restaurant-box__content--icon {
+  height: 50px;
+  width: 50px;
+  position: relative;
+}
+@media only screen and (max-width: 250px) {
+  .restaurant-box__content--icon {
+    height: 20px;
+    width: 20px;
+  }
+}
+@media only screen and (max-width: 250px) {
+  .restaurant-box__content--icon i {
+    font-size: 14px;
+  }
 }
 
 .footer {
   background-color: #373737;
   padding: 3%;
+}
+@media only screen and (max-width: 250px) {
+  .footer ul {
+    padding: 8%;
+    font-size: 11px;
+  }
+}
+@media only screen and (min-width: 250px) and (max-width: 350px) {
+  .footer ul {
+    padding: 8%;
+  }
 }
 
 .footer__link {
@@ -426,13 +650,33 @@ main h3 {
   list-style: none;
   line-height: 2em;
 }
+@media only screen and (max-width: 250px) {
+  .footer__link {
+    line-height: 1.5em;
+  }
+}
 .footer__link--logo {
   font-family: "Shrikhand";
   font-size: 20px;
 }
+@media only screen and (max-width: 250px) {
+  .footer__link--logo {
+    font-size: 14px;
+  }
+}
 .footer__link i {
   padding-right: 1.5em;
   width: 25px;
+}
+@media only screen and (max-width: 250px) {
+  .footer__link i {
+    padding-right: 1em;
+    width: 20px;
+  }
+}
+.footer__link a {
+  text-decoration: none;
+  color: #fff;
 }
 
 /* PAGES */
@@ -446,9 +690,32 @@ main h3 {
   font-family: Shrikhand;
   font-weight: normal;
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 250px) {
+  .content h1 {
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+@media only screen and (min-width: 250px) and (max-width: 350px) {
+  .content h1 {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 250px) {
+  .content {
+    margin-top: -90px;
+  }
+}
+@media only screen and (max-width: 500px), only screen and (min-width: 501px) and (max-width: 700px), only screen and (min-width: 701px) and (max-width: 975px) {
   .content {
     border-radius: 50px 50px 0 0;
+  }
+}
+@media only screen and (max-width: 250px), only screen and (min-width: 250px) and (max-width: 350px) {
+  .content {
+    border-radius: 30px 30px 0 0;
   }
 }
 
@@ -467,6 +734,18 @@ main h3 {
   text-transform: uppercase;
   font-size: 16px;
 }
+@media only screen and (max-width: 250px) {
+  .menu h3 {
+    font-size: 14px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .menu {
+    width: auto;
+    min-width: auto;
+  }
+}
+
 .menu__title {
   display: flex;
   align-items: center;
@@ -474,10 +753,25 @@ main h3 {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-@media only screen and (max-width: 500px) {
-  .menu {
-    width: auto;
-    min-width: auto;
+@media only screen and (min-width: 250px) and (max-width: 350px) {
+  .menu__title {
+    margin-top: 25px;
+  }
+}
+.menu__title--icon {
+  position: relative;
+  height: 50px;
+  width: 50px;
+}
+@media only screen and (max-width: 250px), only screen and (min-width: 250px) and (max-width: 350px) {
+  .menu__title--icon {
+    height: 30px;
+    width: 30px;
+  }
+}
+@media only screen and (max-width: 250px), only screen and (min-width: 250px) and (max-width: 350px) {
+  .menu__title i {
+    font-size: 16px;
   }
 }
 
@@ -508,12 +802,12 @@ main h3 {
 }
 
 .dishes-box {
-  display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: #FFF;
   border-radius: 20px;
   margin-bottom: 15px;
+  position: relative;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
 }
 .dishes-box p {
@@ -521,7 +815,6 @@ main h3 {
 }
 .dishes-box__content {
   padding: 1em;
-  width: 70%;
 }
 .dishes-box__name p {
   font-weight: bold;
@@ -530,6 +823,9 @@ main h3 {
   text-overflow: ellipsis;
 }
 .dishes-box__check {
+  position: absolute;
+  top: 0;
+  right: 0;
   transform: scaleX(0);
   text-align: center;
   background-color: #99E2D0;
@@ -538,7 +834,7 @@ main h3 {
 
 .fa-check-circle {
   transform: scaleX(1);
-  padding: 1em;
+  padding: 0.8em;
   color: white;
   font-size: 30px;
 }
@@ -551,6 +847,7 @@ main h3 {
 }
 .dishes-box__description p {
   padding-top: 0.5em;
+  padding-left: 0.5em;
   font-size: 14px;
 }
 .dishes-box__description--price {
@@ -567,6 +864,16 @@ main h3 {
   margin: auto;
   margin-top: 50px;
   margin-bottom: 85px;
+}
+@media only screen and (max-width: 250px), only screen and (min-width: 250px) and (max-width: 350px) {
+  .order {
+    width: 70%;
+    padding: 1em;
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

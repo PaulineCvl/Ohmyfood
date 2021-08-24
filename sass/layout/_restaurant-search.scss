@@ -5,6 +5,17 @@
     h1 {
         margin: 0;
         font-weight: bold;
+        @media #{$breakpoint-xxsmall} {
+            font-size: 14px;
+        }
+        @media #{$breakpoint-xsmall} {
+            font-size: 20px;
+        }
+    }
+    p {
+        @media #{$breakpoint-xxsmall} {
+            font-size: 11px;
+        }
     }
     @media #{$breakpoint-small} {
         padding: map-get($padding-layout, large)

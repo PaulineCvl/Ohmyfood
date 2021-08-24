@@ -1,3 +1,9 @@
 @mixin box-shadow($shadow-size: $heading-shadow-size, $shadow-darkness: $shadow-color) {
     box-shadow: $shadow-size $shadow-size 10px $shadow-darkness;
 }
+
+@mixin overflow {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

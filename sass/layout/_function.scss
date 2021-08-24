@@ -7,26 +7,49 @@
     display: flex;
     justify-content: space-around;
     counter-reset: functionlist;
-    @media #{$breakpoint-small} {
+    @media #{$breakpoint-xxsmall} {
+        font-size: 11px;
+    }
+    @media #{$breakpoint-xsmall} {
+        font-size: 12px;
+        width: 90%;
+        margin: auto;
+    }
+    @media #{$breakpoint-small}, #{$breakpoint-medium}, #{$breakpoint-large} {
         flex-direction: column;
+    }
+    @media #{$breakpoint-medium} {
+        width: 70%;
+        margin: auto;
+    }
+    @media #{$breakpoint-large} {
+        width: 50%;
+        margin: auto;
     }
 }
 
 .function-container__box {
         display: flex;
         align-items: center;
-        padding: 1.5em 2em;
+        padding: 1.5em;
         background-color: $background;
         border-radius: 15px;
         position: relative;
         @include box-shadow;
-        @media #{$breakpoint-small} {
+        @media #{$breakpoint-xxsmall} {
+            padding: 1em 2em;
+            border-radius: 5px;
+        }
+        @media #{$breakpoint-small}, #{$breakpoint-medium}, #{$breakpoint-large} {
             margin-bottom: 20px;
         }
         p {
             margin: 0;
             font-weight: bold;
             padding-left: 1em;
+            @media #{$breakpoint-xxsmall}, #{$breakpoint-xsmall} {
+                @include overflow;
+            }
         }
         &::before {
             background-color: $color-primary;
@@ -37,6 +60,9 @@
             position: absolute;
             left: -10px;
             padding: 0.1em 0.4em;
+            @media #{$breakpoint-xxsmall} {
+                left: 0;
+            }
         }
 }
 
