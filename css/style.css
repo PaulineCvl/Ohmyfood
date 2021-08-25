@@ -231,7 +231,10 @@ i.far.fa-heart {
 }
 
 i.fas.fa-heart {
-  color: #9356DC;
+  background-image: linear-gradient(#FF79DA, #9356DC);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   position: absolute;
   top: 25%;
   left: 25%;
