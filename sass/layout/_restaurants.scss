@@ -37,6 +37,27 @@
     }
 }
 
+.restaurants-box__img {
+    position: relative;
+    .new {
+        background-color: $color-tertiary;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: inherit;
+        border-radius: 2px;
+        p {
+            font-weight: bold;
+            padding: 0.5em 1em;
+            margin: 0;
+            color: darken($color-tertiary, 40%);
+        }
+    }
+}
+
 .restaurants-box__content {
         padding: 1em;
         display: flex;
