@@ -1,6 +1,6 @@
 .function {
     padding: map-get($padding-layout, medium);
-    background-color: #fff;
+    background-color: $white;
 }
 
 .function-container {
@@ -8,10 +8,10 @@
     justify-content: space-around;
     counter-reset: functionlist;
     @media #{$breakpoint-xxsmall} {
-        font-size: 11px;
+        font-size: map-get($font-size, x-small);
     }
     @media #{$breakpoint-xsmall} {
-        font-size: 12px;
+        font-size: map-get($font-size, small);
         width: 90%;
         margin: auto;
     }
@@ -29,8 +29,7 @@
 }
 
 .function-container__box {
-        display: flex;
-        align-items: center;
+        @include flexbox;
         padding: 1.5em;
         background-color: $background;
         border-radius: 15px;
@@ -53,7 +52,7 @@
         }
         &::before {
             background-color: $color-primary;
-            color: #fff;
+            color: $white;
             border-radius: 50%;
             counter-increment: functionlist;
             content: counter(functionlist);

@@ -25,7 +25,7 @@
 
 .restaurants-box {
     margin-bottom: 40px;
-    background-color: #fff;
+    background-color: $white;
     border-radius: 15px;
     @include box-shadow;
     a {
@@ -44,9 +44,7 @@
         position: absolute;
         top: 15px;
         right: 15px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flexbox;
         box-sizing: inherit;
         border-radius: 2px;
         p {
@@ -64,7 +62,7 @@
         justify-content: space-between;
         align-items: center;
         a {
-            color: #000;
+            color: $black;
             width: 100%;
             @media #{$breakpoint-xxsmall}, #{$breakpoint-xsmall} {
                 width: 75%;
@@ -72,9 +70,9 @@
         }
         h2 {
             margin: 0;
-            font-size: 20px;
+            font-size: map-get($font-size, large);
             @media #{$breakpoint-xxsmall} {
-                font-size: 14px;
+                font-size: map-get($font-size, medium);
                 @include overflow;
             }
             @media #{$breakpoint-xsmall} {
@@ -86,7 +84,7 @@
             margin: 0;
             margin-top: 5px;
             @media #{$breakpoint-xxsmall} {
-                font-size: 11px;
+                font-size: map-get($font-size, x-small);
                 @include overflow;
             }
         }
@@ -102,7 +100,7 @@
             }
             i {
                 @media #{$breakpoint-xxsmall} {
-                    font-size: 14px;
+                    font-size: map-get($font-size, medium);
                 }
             }
 }

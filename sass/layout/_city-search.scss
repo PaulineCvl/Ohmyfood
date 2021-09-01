@@ -1,12 +1,10 @@
 .city-search {
     height: 50px;
     background-color: darken($background, 4.8%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flexbox;
     i {
         @media #{$breakpoint-xxsmall} {
-            font-size: 11px;
+            font-size: map-get($font-size, x-small);
             padding: 0.5em;
         }
     }
@@ -17,15 +15,15 @@
         border: none;
         text-align: center;
         font-weight: bold;
-        font-size: 14px;
+        font-size: map-get($font-size, medium);
         @media #{$breakpoint-xxsmall} {
-            font-size: 11px;
+            font-size: map-get($font-size, x-small);
             width: 100px;
             padding: 0.5em;
             @include overflow;
         }
     }
     input::placeholder {
-            color: #000;
+            color: $black;
     }
 }

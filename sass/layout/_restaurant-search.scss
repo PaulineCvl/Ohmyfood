@@ -6,15 +6,15 @@
         margin: 0;
         font-weight: bold;
         @media #{$breakpoint-xxsmall} {
-            font-size: 14px;
+            font-size: map-get($font-size, medium);
         }
         @media #{$breakpoint-xsmall} {
-            font-size: 20px;
+            font-size: map-get($font-size, large);
         }
     }
     p {
         @media #{$breakpoint-xxsmall} {
-            font-size: 11px;
+            font-size: map-get($font-size, x-small);
         }
     }
     @media #{$breakpoint-small} {
